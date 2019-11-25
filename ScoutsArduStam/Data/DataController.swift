@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 
 class DataController {
@@ -23,7 +24,7 @@ class DataController {
     private init() { }
 
     func loginUser(email: String, password: String, completion: @escaping(Bool) -> Void) {
-       /* let parameters: [String: String] = [
+       let parameters: [String: String] = [
             "email": email,
             "password": password
         ]
@@ -50,12 +51,12 @@ class DataController {
                     print(error)
                     completion(false)
                 }
-        }*/
+        }
 
     }
 
     func registerUser(email: String, password: String, voornaam: String, achternaam: String, passwordConfirmation: String, completion: @escaping(Bool) -> Void) {
-        /*let parameters: [String: String] = [
+        let parameters: [String: String] = [
             "email": email,
             "password": password,
             "voornaam": voornaam,
@@ -88,7 +89,7 @@ class DataController {
                     completion(false)
                 }
         }
-*/
+
     }
 
     func getWinkelwagenItems(completion: @escaping([WinkelwagenItem]) -> Void) {
