@@ -3,14 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		6DB17800E8D74EFB53C76587 /* Pods_ScoutsArduStam.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87C69337E56E05A392B0FE98 /* Pods_ScoutsArduStam.framework */; };
 		A04893C2238C32E900E4B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C1238C32E900E4B4E2 /* AppDelegate.swift */; };
 		A04893C4238C32E900E4B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */; };
-		A04893C6238C32E900E4B4E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C5238C32E900E4B4E2 /* ViewController.swift */; };
 		A04893D7238C333C00E4B4E2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893D6238C333C00E4B4E2 /* DataController.swift */; };
 		A04893F2238C334D00E4B4E2 /* selfDefinedClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893D9238C334D00E4B4E2 /* selfDefinedClasses.swift */; };
 		A04893F3238C334D00E4B4E2 /* OverzichtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893DC238C334D00E4B4E2 /* OverzichtViewController.swift */; };
@@ -36,6 +35,9 @@
 		A0489411238C336F00E4B4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A048940B238C336F00E4B4E2 /* LaunchScreen.storyboard */; };
 		A0489413238C340600E4B4E2 /* SantéViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0489412238C340500E4B4E2 /* SantéViewController.swift */; };
 		A0489415238C343400E4B4E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0489414238C343300E4B4E2 /* Main.storyboard */; };
+		A0FD956B238C40B7002B1691 /* FacebookCore in Frameworks */ = {isa = PBXBuildFile; productRef = A0FD956A238C40B7002B1691 /* FacebookCore */; };
+		A0FD956D238C40B7002B1691 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = A0FD956C238C40B7002B1691 /* FacebookLogin */; };
+		A0FD956F238C40B7002B1691 /* FacebookShare in Frameworks */ = {isa = PBXBuildFile; productRef = A0FD956E238C40B7002B1691 /* FacebookShare */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,7 +45,6 @@
 		A04893BE238C32E900E4B4E2 /* ScoutsArduStam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScoutsArduStam.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A04893C1238C32E900E4B4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A04893C5238C32E900E4B4E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		A04893CF238C32EB00E4B4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A04893D6238C333C00E4B4E2 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		A04893D9238C334D00E4B4E2 /* selfDefinedClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selfDefinedClasses.swift; sourceTree = "<group>"; };
@@ -80,6 +81,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				6DB17800E8D74EFB53C76587 /* Pods_ScoutsArduStam.framework in Frameworks */,
+				A0FD956B238C40B7002B1691 /* FacebookCore in Frameworks */,
+				A0FD956F238C40B7002B1691 /* FacebookShare in Frameworks */,
+				A0FD956D238C40B7002B1691 /* FacebookLogin in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,7 +125,6 @@
 				A04893C1238C32E900E4B4E2 /* AppDelegate.swift */,
 				A0489414238C343300E4B4E2 /* Main.storyboard */,
 				A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */,
-				A04893C5238C32E900E4B4E2 /* ViewController.swift */,
 				A0489408238C336E00E4B4E2 /* Assets.xcassets */,
 				A048940B238C336F00E4B4E2 /* LaunchScreen.storyboard */,
 				A04893CF238C32EB00E4B4E2 /* Info.plist */,
@@ -148,9 +151,9 @@
 		A04893DA238C334D00E4B4E2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				A04893E6238C334D00E4B4E2 /* History */,
 				A04893DB238C334D00E4B4E2 /* Stam */,
 				A04893E3238C334D00E4B4E2 /* Portefeuille */,
-				A04893E6238C334D00E4B4E2 /* History */,
 				A04893E9238C334D00E4B4E2 /* DashboardCollectionViewCell.swift */,
 				A04893EA238C334D00E4B4E2 /* Login */,
 			);
@@ -231,6 +234,11 @@
 			dependencies = (
 			);
 			name = ScoutsArduStam;
+			packageProductDependencies = (
+				A0FD956A238C40B7002B1691 /* FacebookCore */,
+				A0FD956C238C40B7002B1691 /* FacebookLogin */,
+				A0FD956E238C40B7002B1691 /* FacebookShare */,
+			);
 			productName = ScoutsArduStam;
 			productReference = A04893BE238C32E900E4B4E2 /* ScoutsArduStam.app */;
 			productType = "com.apple.product-type.application";
@@ -259,6 +267,9 @@
 				Base,
 			);
 			mainGroup = A04893B5238C32E900E4B4E2;
+			packageReferences = (
+				A0FD9569238C40B7002B1691 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = A04893BF238C32E900E4B4E2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -328,7 +339,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04893C6238C32E900E4B4E2 /* ViewController.swift in Sources */,
 				A0489413238C340600E4B4E2 /* SantéViewController.swift in Sources */,
 				A04893FA238C334D00E4B4E2 /* PortefeuilleViewController.swift in Sources */,
 				A04893F5238C334D00E4B4E2 /* StamCollectionViewController.swift in Sources */,
@@ -413,6 +423,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -466,6 +477,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				OTHER_LDFLAGS = "-ObjC";
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
@@ -533,6 +545,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		A0FD9569238C40B7002B1691 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.11.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		A0FD956A238C40B7002B1691 /* FacebookCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0FD9569238C40B7002B1691 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookCore;
+		};
+		A0FD956C238C40B7002B1691 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0FD9569238C40B7002B1691 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+		A0FD956E238C40B7002B1691 /* FacebookShare */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = A0FD9569238C40B7002B1691 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookShare;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A04893B6238C32E900E4B4E2 /* Project object */;
 }

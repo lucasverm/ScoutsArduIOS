@@ -7,9 +7,11 @@
 //
 
 import UIKit
+import FacebookLogin
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet var facebookLogin: FBLoginButton!
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet var TextFieldEmail: UITextField!
     @IBOutlet var TextFieldWachtwoord: UITextField!
@@ -25,6 +27,16 @@ class LoginViewController: UIViewController {
         ButtonRegistreer.layer.cornerRadius = 5.0
         ButtonRegistreer.layer.borderColor = UIColor.systemBlue.cgColor
         ButtonLogin.layer.cornerRadius = 5.0
+        // Obtain all constraints for the button:
+        let layoutConstraintsArr = facebookLogin.constraints
+        // Iterate over array and test constraints until we find the correct one:
+        for lc in layoutConstraintsArr { // or attribute is NSLayoutAttributeHeight etc.
+           if ( lc.constant == 28 ){
+             // Then disable it...
+            lc.isActive = false
+             break
+           }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
