@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -116,6 +116,8 @@
 			isa = PBXGroup;
 			children = (
 				A04893D5238C333C00E4B4E2 /* Data */,
+				A04893D8238C334D00E4B4E2 /* Structs */,
+				A04893DA238C334D00E4B4E2 /* ViewControllers */,
 				A04893C1238C32E900E4B4E2 /* AppDelegate.swift */,
 				A0489414238C343300E4B4E2 /* Main.storyboard */,
 				A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */,
@@ -130,8 +132,6 @@
 		A04893D5238C333C00E4B4E2 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				A04893D8238C334D00E4B4E2 /* Structs */,
-				A04893DA238C334D00E4B4E2 /* ViewControllers */,
 				A04893D6238C333C00E4B4E2 /* DataController.swift */,
 			);
 			path = Data;
@@ -210,7 +210,6 @@
 				FD1D91B9420E23B2B25FAEB2 /* Pods-ScoutsArduStam.debug.xcconfig */,
 				E64DDE873A37B684B3045778 /* Pods-ScoutsArduStam.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
