@@ -10,9 +10,31 @@
 		A04893C2238C32E900E4B4E2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C1238C32E900E4B4E2 /* AppDelegate.swift */; };
 		A04893C4238C32E900E4B4E2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */; };
 		A04893C6238C32E900E4B4E2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893C5238C32E900E4B4E2 /* ViewController.swift */; };
-		A04893C9238C32E900E4B4E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04893C7238C32E900E4B4E2 /* Main.storyboard */; };
-		A04893CB238C32EB00E4B4E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A04893CA238C32EB00E4B4E2 /* Assets.xcassets */; };
-		A04893CE238C32EB00E4B4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A04893CC238C32EB00E4B4E2 /* LaunchScreen.storyboard */; };
+		A04893D7238C333C00E4B4E2 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893D6238C333C00E4B4E2 /* DataController.swift */; };
+		A04893F2238C334D00E4B4E2 /* selfDefinedClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893D9238C334D00E4B4E2 /* selfDefinedClasses.swift */; };
+		A04893F3238C334D00E4B4E2 /* OverzichtViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893DC238C334D00E4B4E2 /* OverzichtViewController.swift */; };
+		A04893F4238C334D00E4B4E2 /* WinkelwagenItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893DD238C334D00E4B4E2 /* WinkelwagenItemTableViewCell.swift */; };
+		A04893F5238C334D00E4B4E2 /* StamCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893DE238C334D00E4B4E2 /* StamCollectionViewController.swift */; };
+		A04893F6238C334D00E4B4E2 /* BetaaldTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893DF238C334D00E4B4E2 /* BetaaldTableViewCell.swift */; };
+		A04893F7238C334D00E4B4E2 /* MenuCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E0238C334D00E4B4E2 /* MenuCollectionViewCell.swift */; };
+		A04893F8238C334D00E4B4E2 /* EnenDrinkenTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E1238C334D00E4B4E2 /* EnenDrinkenTableViewController.swift */; };
+		A04893F9238C334D00E4B4E2 /* OverichtTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E2238C334D00E4B4E2 /* OverichtTableViewCell.swift */; };
+		A04893FA238C334D00E4B4E2 /* PortefeuilleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E4238C334D00E4B4E2 /* PortefeuilleViewController.swift */; };
+		A04893FB238C334D00E4B4E2 /* PortefeuilleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E5238C334D00E4B4E2 /* PortefeuilleTableViewCell.swift */; };
+		A04893FC238C334D00E4B4E2 /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E7238C334D00E4B4E2 /* HistoryTableViewCell.swift */; };
+		A04893FD238C334D00E4B4E2 /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E8238C334D00E4B4E2 /* HistoryViewController.swift */; };
+		A04893FE238C334D00E4B4E2 /* DashboardCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893E9238C334D00E4B4E2 /* DashboardCollectionViewCell.swift */; };
+		A04893FF238C334D00E4B4E2 /* AccountNameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893EB238C334D00E4B4E2 /* AccountNameTableViewCell.swift */; };
+		A0489400238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893EC238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift */; };
+		A0489401238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893ED238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift */; };
+		A0489402238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893EE238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift */; };
+		A0489403238C334D00E4B4E2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893EF238C334D00E4B4E2 /* LoginViewController.swift */; };
+		A0489404238C334D00E4B4E2 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893F0238C334D00E4B4E2 /* AccountViewController.swift */; };
+		A0489405238C334D00E4B4E2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A04893F1238C334D00E4B4E2 /* RegisterViewController.swift */; };
+		A048940E238C336F00E4B4E2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0489408238C336E00E4B4E2 /* Assets.xcassets */; };
+		A0489411238C336F00E4B4E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A048940B238C336F00E4B4E2 /* LaunchScreen.storyboard */; };
+		A0489413238C340600E4B4E2 /* SantéViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0489412238C340500E4B4E2 /* SantéViewController.swift */; };
+		A0489415238C343400E4B4E2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0489414238C343300E4B4E2 /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +42,32 @@
 		A04893C1238C32E900E4B4E2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A04893C5238C32E900E4B4E2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A04893C8238C32E900E4B4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A04893CA238C32EB00E4B4E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		A04893CD238C32EB00E4B4E2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A04893CF238C32EB00E4B4E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A04893D6238C333C00E4B4E2 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		A04893D9238C334D00E4B4E2 /* selfDefinedClasses.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = selfDefinedClasses.swift; sourceTree = "<group>"; };
+		A04893DC238C334D00E4B4E2 /* OverzichtViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverzichtViewController.swift; sourceTree = "<group>"; };
+		A04893DD238C334D00E4B4E2 /* WinkelwagenItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WinkelwagenItemTableViewCell.swift; sourceTree = "<group>"; };
+		A04893DE238C334D00E4B4E2 /* StamCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StamCollectionViewController.swift; sourceTree = "<group>"; };
+		A04893DF238C334D00E4B4E2 /* BetaaldTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BetaaldTableViewCell.swift; sourceTree = "<group>"; };
+		A04893E0238C334D00E4B4E2 /* MenuCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuCollectionViewCell.swift; sourceTree = "<group>"; };
+		A04893E1238C334D00E4B4E2 /* EnenDrinkenTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnenDrinkenTableViewController.swift; sourceTree = "<group>"; };
+		A04893E2238C334D00E4B4E2 /* OverichtTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverichtTableViewCell.swift; sourceTree = "<group>"; };
+		A04893E4238C334D00E4B4E2 /* PortefeuilleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortefeuilleViewController.swift; sourceTree = "<group>"; };
+		A04893E5238C334D00E4B4E2 /* PortefeuilleTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PortefeuilleTableViewCell.swift; sourceTree = "<group>"; };
+		A04893E7238C334D00E4B4E2 /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
+		A04893E8238C334D00E4B4E2 /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		A04893E9238C334D00E4B4E2 /* DashboardCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardCollectionViewCell.swift; sourceTree = "<group>"; };
+		A04893EB238C334D00E4B4E2 /* AccountNameTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountNameTableViewCell.swift; sourceTree = "<group>"; };
+		A04893EC238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUitloggenTableViewCell.swift; sourceTree = "<group>"; };
+		A04893ED238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WachtwoordVergetenViewController.swift; sourceTree = "<group>"; };
+		A04893EE238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountUserPropertyTableViewCell.swift; sourceTree = "<group>"; };
+		A04893EF238C334D00E4B4E2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		A04893F0238C334D00E4B4E2 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
+		A04893F1238C334D00E4B4E2 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		A0489408238C336E00E4B4E2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = "../../../Dropbox/school/Hogent/2019-2020/HogentSemester1/IOS/Project/ScoutsArduIOS/ScoutsArduIOS/Assets.xcassets"; sourceTree = "<group>"; };
+		A048940B238C336F00E4B4E2 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A0489412238C340500E4B4E2 /* SantéViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SantéViewController.swift"; sourceTree = "<group>"; };
+		A0489414238C343300E4B4E2 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +100,93 @@
 		A04893C0238C32E900E4B4E2 /* ScoutsArduStam */ = {
 			isa = PBXGroup;
 			children = (
+				A04893D5238C333C00E4B4E2 /* Data */,
 				A04893C1238C32E900E4B4E2 /* AppDelegate.swift */,
+				A0489414238C343300E4B4E2 /* Main.storyboard */,
 				A04893C3238C32E900E4B4E2 /* SceneDelegate.swift */,
 				A04893C5238C32E900E4B4E2 /* ViewController.swift */,
-				A04893C7238C32E900E4B4E2 /* Main.storyboard */,
-				A04893CA238C32EB00E4B4E2 /* Assets.xcassets */,
-				A04893CC238C32EB00E4B4E2 /* LaunchScreen.storyboard */,
+				A0489408238C336E00E4B4E2 /* Assets.xcassets */,
+				A048940B238C336F00E4B4E2 /* LaunchScreen.storyboard */,
 				A04893CF238C32EB00E4B4E2 /* Info.plist */,
 			);
 			path = ScoutsArduStam;
+			sourceTree = "<group>";
+		};
+		A04893D5238C333C00E4B4E2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A04893D8238C334D00E4B4E2 /* Structs */,
+				A04893DA238C334D00E4B4E2 /* ViewControllers */,
+				A04893D6238C333C00E4B4E2 /* DataController.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		A04893D8238C334D00E4B4E2 /* Structs */ = {
+			isa = PBXGroup;
+			children = (
+				A04893D9238C334D00E4B4E2 /* selfDefinedClasses.swift */,
+			);
+			path = Structs;
+			sourceTree = "<group>";
+		};
+		A04893DA238C334D00E4B4E2 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				A04893DB238C334D00E4B4E2 /* Stam */,
+				A04893E3238C334D00E4B4E2 /* Portefeuille */,
+				A04893E6238C334D00E4B4E2 /* History */,
+				A04893E9238C334D00E4B4E2 /* DashboardCollectionViewCell.swift */,
+				A04893EA238C334D00E4B4E2 /* Login */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		A04893DB238C334D00E4B4E2 /* Stam */ = {
+			isa = PBXGroup;
+			children = (
+				A0489412238C340500E4B4E2 /* SantéViewController.swift */,
+				A04893DC238C334D00E4B4E2 /* OverzichtViewController.swift */,
+				A04893DD238C334D00E4B4E2 /* WinkelwagenItemTableViewCell.swift */,
+				A04893DE238C334D00E4B4E2 /* StamCollectionViewController.swift */,
+				A04893DF238C334D00E4B4E2 /* BetaaldTableViewCell.swift */,
+				A04893E0238C334D00E4B4E2 /* MenuCollectionViewCell.swift */,
+				A04893E1238C334D00E4B4E2 /* EnenDrinkenTableViewController.swift */,
+				A04893E2238C334D00E4B4E2 /* OverichtTableViewCell.swift */,
+			);
+			path = Stam;
+			sourceTree = "<group>";
+		};
+		A04893E3238C334D00E4B4E2 /* Portefeuille */ = {
+			isa = PBXGroup;
+			children = (
+				A04893E4238C334D00E4B4E2 /* PortefeuilleViewController.swift */,
+				A04893E5238C334D00E4B4E2 /* PortefeuilleTableViewCell.swift */,
+			);
+			path = Portefeuille;
+			sourceTree = "<group>";
+		};
+		A04893E6238C334D00E4B4E2 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A04893E7238C334D00E4B4E2 /* HistoryTableViewCell.swift */,
+				A04893E8238C334D00E4B4E2 /* HistoryViewController.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		A04893EA238C334D00E4B4E2 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				A04893EB238C334D00E4B4E2 /* AccountNameTableViewCell.swift */,
+				A04893EC238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift */,
+				A04893ED238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift */,
+				A04893EE238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift */,
+				A04893EF238C334D00E4B4E2 /* LoginViewController.swift */,
+				A04893F0238C334D00E4B4E2 /* AccountViewController.swift */,
+				A04893F1238C334D00E4B4E2 /* RegisterViewController.swift */,
+			);
+			path = Login;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +247,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A04893CE238C32EB00E4B4E2 /* LaunchScreen.storyboard in Resources */,
-				A04893CB238C32EB00E4B4E2 /* Assets.xcassets in Resources */,
-				A04893C9238C32E900E4B4E2 /* Main.storyboard in Resources */,
+				A0489415238C343400E4B4E2 /* Main.storyboard in Resources */,
+				A0489411238C336F00E4B4E2 /* LaunchScreen.storyboard in Resources */,
+				A048940E238C336F00E4B4E2 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,31 +261,34 @@
 			buildActionMask = 2147483647;
 			files = (
 				A04893C6238C32E900E4B4E2 /* ViewController.swift in Sources */,
+				A0489413238C340600E4B4E2 /* SantéViewController.swift in Sources */,
+				A04893FA238C334D00E4B4E2 /* PortefeuilleViewController.swift in Sources */,
+				A04893F5238C334D00E4B4E2 /* StamCollectionViewController.swift in Sources */,
+				A0489405238C334D00E4B4E2 /* RegisterViewController.swift in Sources */,
+				A0489400238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift in Sources */,
+				A0489402238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift in Sources */,
+				A04893F3238C334D00E4B4E2 /* OverzichtViewController.swift in Sources */,
+				A04893F8238C334D00E4B4E2 /* EnenDrinkenTableViewController.swift in Sources */,
+				A0489401238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift in Sources */,
+				A04893D7238C333C00E4B4E2 /* DataController.swift in Sources */,
 				A04893C2238C32E900E4B4E2 /* AppDelegate.swift in Sources */,
+				A0489403238C334D00E4B4E2 /* LoginViewController.swift in Sources */,
+				A04893FD238C334D00E4B4E2 /* HistoryViewController.swift in Sources */,
+				A04893F4238C334D00E4B4E2 /* WinkelwagenItemTableViewCell.swift in Sources */,
+				A04893FE238C334D00E4B4E2 /* DashboardCollectionViewCell.swift in Sources */,
 				A04893C4238C32E900E4B4E2 /* SceneDelegate.swift in Sources */,
+				A04893FC238C334D00E4B4E2 /* HistoryTableViewCell.swift in Sources */,
+				A0489404238C334D00E4B4E2 /* AccountViewController.swift in Sources */,
+				A04893F2238C334D00E4B4E2 /* selfDefinedClasses.swift in Sources */,
+				A04893F9238C334D00E4B4E2 /* OverichtTableViewCell.swift in Sources */,
+				A04893F6238C334D00E4B4E2 /* BetaaldTableViewCell.swift in Sources */,
+				A04893F7238C334D00E4B4E2 /* MenuCollectionViewCell.swift in Sources */,
+				A04893FF238C334D00E4B4E2 /* AccountNameTableViewCell.swift in Sources */,
+				A04893FB238C334D00E4B4E2 /* PortefeuilleTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		A04893C7238C32E900E4B4E2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A04893C8238C32E900E4B4E2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		A04893CC238C32EB00E4B4E2 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A04893CD238C32EB00E4B4E2 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		A04893D0238C32EB00E4B4E2 /* Debug */ = {
