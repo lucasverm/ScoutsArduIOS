@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import FacebookCore
 import FacebookLogin
 
 class LoginViewController: UIViewController {
 
-    @IBOutlet var facebookLogin: FBLoginButton!
+    @IBOutlet var facebookLogin: UIButton!
     @IBOutlet var errorMessage: UILabel!
     @IBOutlet var TextFieldEmail: UITextField!
     @IBOutlet var TextFieldWachtwoord: UITextField!
@@ -31,17 +32,74 @@ class LoginViewController: UIViewController {
         let layoutConstraintsArr = facebookLogin.constraints
         // Iterate over array and test constraints until we find the correct one:
         for lc in layoutConstraintsArr { // or attribute is NSLayoutAttributeHeight etc.
-           if ( lc.constant == 28 ){
-             // Then disable it...
-            lc.isActive = false
-             break
-           }
+            if (lc.constant == 28) {
+                // Then disable it...
+                lc.isActive = false
+                break
+            }
         }
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if dataController.userIsAuthenticated {
             self.dismiss(animated: true, completion: nil)
+        }
+    }
+
+    @IBAction func facebookLoginButtonClicked(_ sender: Any) {
+        DispatchQueue.main.async {
+            self.errorMessage.backgroundColor = UIColor.systemOrange
+            self.errorMessage.text = "Inloggen met facebook..."
+            self.errorMessage.isHidden = false
+        }
+        self.dataController.loginManager.logIn(
+            permissions: [.email, .publicProfile, .userFriends],
+            viewController: self
+        ) { result in
+            switch result {
+            case .cancelled:
+                DispatchQueue.main.async {
+                    self.errorMessage.backgroundColor = UIColor.systemRed
+                    self.errorMessage.text = "U canncelde het aanmelden met facebook..."
+                }
+
+            case .failed(let error):
+                DispatchQueue.main.async {
+                    self.errorMessage.backgroundColor = UIColor.systemRed
+                    self.errorMessage.text = "Er liep iets fout tijdens het aanmelden met facebook!"
+                }
+
+            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+                GraphRequest(graphPath: "me", parameters: ["fields": "id,name , first_name, last_name , email"]).start(completionHandler: { (connection, result, error) in
+
+                    guard let Info = result as? [String: Any] else { return }
+
+                    if let email = Info["email"] as? String
+                    {
+                        DispatchQueue.main.async {
+                            self.errorMessage.text = "Ingelogd met facebook! Verbinden met server..."
+                        }
+                        let voornaam = Info["first_name"] as? String
+                        let achternaam = Info["last_name"] as? String
+                        self.dataController.loginFacebookUser(email: email, voornaam: voornaam!, achternaam: achternaam!) { variable in
+                            if (variable) {
+                                self.dataController.userIsAuthenticated = true
+                                DispatchQueue.main.async {
+                                    self.errorMessage.backgroundColor = UIColor.systemGreen
+                                    self.errorMessage.text = "Aangemeld!"
+                                    self.dismiss(animated: true, completion: nil)
+                                }
+                            } else {
+                                DispatchQueue.main.async {
+                                    self.errorMessage.backgroundColor = UIColor.systemRed
+                                    self.errorMessage.text = "Er liep iets fout!"
+                                }
+                            }
+                        }
+                    }
+
+                })
+            }
         }
     }
 

@@ -198,9 +198,9 @@
 			children = (
 				A04893EB238C334D00E4B4E2 /* AccountNameTableViewCell.swift */,
 				A04893EC238C334D00E4B4E2 /* AccountUitloggenTableViewCell.swift */,
-				A04893ED238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift */,
 				A04893EE238C334D00E4B4E2 /* AccountUserPropertyTableViewCell.swift */,
 				A04893EF238C334D00E4B4E2 /* LoginViewController.swift */,
+				A04893ED238C334D00E4B4E2 /* WachtwoordVergetenViewController.swift */,
 				A04893F0238C334D00E4B4E2 /* AccountViewController.swift */,
 				A04893F1238C334D00E4B4E2 /* RegisterViewController.swift */,
 			);

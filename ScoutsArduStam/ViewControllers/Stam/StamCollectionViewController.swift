@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FacebookCore
+import FacebookLogin
 
 private let reuseIdentifier = "Cell"
 
@@ -39,11 +41,12 @@ class StamCollectionViewController: UICollectionViewController {
 
         // Do any additional setup after loading the view.
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         if !dataController.userIsAuthenticated {
             self.performSegue(withIdentifier: "login", sender: self)
         }
+
     }
 
 

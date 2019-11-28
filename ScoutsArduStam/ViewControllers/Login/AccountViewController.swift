@@ -16,6 +16,10 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
     var gebruiker: Gebruiker?
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         self.indicatorVisible(true)
         dataController.getLoggedInUser(completion: {
             (gbr) in
@@ -95,9 +99,12 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
             let cell = tableView.cellForRow(at: indexPath) as! AccountUserPropertyTableViewCell
             cell.TextFieldInput.becomeFirstResponder()
         case 5:
+            
             dataController.gebruiker = nil
+            self.gebruiker = nil
             dataController.bearerToken = ""
             dataController.userIsAuthenticated = false
+            self.dataController.loginManager.logOut()
             tabBarController?.selectedIndex = 0
             let secondVC = tabBarController!.viewControllers?[tabBarController!.selectedIndex] as! UINavigationController
             secondVC.popToRootViewController(animated: false)
@@ -110,12 +117,15 @@ class AccountViewController: UIViewController, UITableViewDataSource, UITableVie
     @IBAction func save(_ sender: Any) {
         self.indicatorVisible(true)
         let cellsData = self.getAllCellsData()
+        if cellsData.count != 3 {
+            self.indicatorVisible(false)
+            return
+        }
         dataController.putGebruiker(voornaam: cellsData[0], achternaam: cellsData[1], telnr:
                 cellsData[2]) { gelukt in
             if(gelukt) {
                 self.gebruiker = self.dataController.gebruiker
                 self.indicatorVisible(false)
-
         }
 
     }
@@ -132,7 +142,13 @@ func getAllCellsData() -> [String] {
         {
             if let cell = tableView.cellForRow(at: IndexPath(row: j, section: i) as IndexPath) {
                 let dataCell = cell as! AccountUserPropertyTableViewCell
-                cellsData.append(dataCell.TextFieldInput!.text!)
+                if (dataCell.TextFieldInput!.text == "")  {
+                    dataCell.LabelText.textColor = UIColor.systemRed
+                } else {
+                    dataCell.LabelText.textColor = UIColor.black
+                    cellsData.append(dataCell.TextFieldInput!.text!)
+                }
+                
             }
 
         }

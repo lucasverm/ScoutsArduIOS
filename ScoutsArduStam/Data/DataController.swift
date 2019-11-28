@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import FacebookCore
+import FacebookLogin
 
 
 class DataController {
@@ -20,6 +22,7 @@ class DataController {
     var stamHistoryOpgehaald: Bool = false
     var myHistory: [Winkelwagen] = []
     var stamHistory: [Winkelwagen] = []
+    var loginManager = LoginManager()
 
     private init() { }
 
@@ -54,6 +57,40 @@ class DataController {
         }
 
     }
+    
+    func loginFacebookUser(email: String, voornaam: String, achternaam:String, completion: @escaping(Bool) -> Void) {
+       let parameters: [String: String] = [
+            "email": email,
+            "voornaam": voornaam,
+            "achternaam": achternaam
+        ]
+
+        let headers: HTTPHeaders = [
+            "Accept": "application/json",
+            "Content-Type": "application/json"
+        ]
+
+        AF.request(baseUrl + "/api/Account/facebooklogin", method: .post,
+            parameters: parameters, encoder: JSONParameterEncoder.default, headers: headers)
+            .validate(statusCode: 200..<300)
+            .responseJSON { response in
+                switch response.result {
+                case let .success(bToken):
+                    let stringToken: String = bToken as! String
+                    self.bearerToken = "bearer " + stringToken
+                    self.userIsAuthenticated = true
+                    self.getLoggedInUser { (gbr) in
+                        self.gebruiker = gbr
+                        completion(true)
+                    }
+                case let .failure(error):
+                    print(error)
+                    completion(false)
+                }
+        }
+
+    }
+
 
     func registerUser(email: String, password: String, voornaam: String, achternaam: String, passwordConfirmation: String, completion: @escaping(Bool) -> Void) {
         let parameters: [String: String] = [
@@ -80,9 +117,9 @@ class DataController {
                     let stringToken: String = bToken as! String
                     self.bearerToken = "bearer " + stringToken
                     self.userIsAuthenticated = true
-                    completion(true)
                     self.getLoggedInUser { (gbr) in
                         self.gebruiker = gbr
+                        completion(true)
                     }
                 case let .failure(error):
                     print(error)
@@ -185,6 +222,7 @@ class DataController {
 
     func putGebruiker(voornaam: String, achternaam: String, telnr: String, completion: @escaping(Bool) -> Void) {
         let urlwithData = "/api/Account?voornaam=" + voornaam + "&achternaam=" + achternaam + "&telnr=" + telnr
+        print(urlwithData)
         let url = URL(string: baseUrl + urlwithData)!
         var request = URLRequest(url: url)
         request.httpMethod = "PUT"
@@ -194,9 +232,12 @@ class DataController {
         let task = URLSession.shared.dataTask(with: request) {
             (data: Data?, response: URLResponse?, error: Error?) in
             let jsonDecoder = JSONDecoder()
-            if let data = data {
+            if let httpResponse = response as? HTTPURLResponse {
+                   print(httpResponse.statusCode)
+               }
+            if data != nil {
                 let gebruiker = try?
-                jsonDecoder.decode(Gebruiker.self, from: data)
+                    jsonDecoder.decode(Gebruiker.self, from: data!)
                 self.gebruiker = gebruiker
                 completion(true)
             }        }

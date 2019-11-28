@@ -95,12 +95,15 @@
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFE-Bk-w9b" customClass="FBSDKLoginButton">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tFE-Bk-w9b">
                                 <rect key="frame" x="20" y="494" width="374" height="45"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="Znl-E1-chi"/>
                                 </constraints>
                                 <state key="normal" title="Facebook"/>
+                                <connections>
+                                    <action selector="facebookLoginButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="91K-iU-YbI"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -361,7 +364,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jNl-8a-Uzc">
-                                                    <rect key="frame" x="106.5" y="0.0" width="302.5" height="34.5"/>
+                                                    <rect key="frame" x="106.5" y="0.0" width="287.5" height="34.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
@@ -374,7 +377,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="jNl-8a-Uzc" secondAttribute="bottom" id="1L2-vw-8xT"/>
-                                                <constraint firstAttribute="trailing" secondItem="jNl-8a-Uzc" secondAttribute="trailing" constant="5" id="482-9h-h0i"/>
+                                                <constraint firstAttribute="trailing" secondItem="jNl-8a-Uzc" secondAttribute="trailing" constant="20" id="482-9h-h0i"/>
                                                 <constraint firstItem="jNl-8a-Uzc" firstAttribute="leading" secondItem="b2J-ES-OVb" secondAttribute="trailing" constant="5" id="64p-V6-DDm"/>
                                                 <constraint firstItem="jNl-8a-Uzc" firstAttribute="top" secondItem="Rwv-ZB-88E" secondAttribute="top" id="8is-Sw-oZB"/>
                                                 <constraint firstItem="b2J-ES-OVb" firstAttribute="top" secondItem="Rwv-ZB-88E" secondAttribute="top" constant="7" id="PaR-jh-zIn"/>
@@ -1248,7 +1251,7 @@
         <image name="rectangle.3.offgrid.fill" catalog="system" width="64" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5r5-at-MJz"/>
+        <segue reference="FJy-IK-DaR"/>
         <segue reference="y8l-Zx-5Hd"/>
     </inferredMetricsTieBreakers>
 </document>

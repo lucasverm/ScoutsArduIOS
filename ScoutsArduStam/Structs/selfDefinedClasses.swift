@@ -105,30 +105,32 @@ class Winkelwagen: Codable {
 class Gebruiker: Codable {
     var voornaam: String = ""
     var achternaam: String = ""
-    var foto: String = ""
+   //var foto: String = ""
     var email: String = ""
     var telefoonNummer: String = ""
+    //var isFacebookUser: Boolean = false
     // gebruikerType: GebruikerType = GebruikerType.Undefined
     var winkelwagens: [Winkelwagen] = []
 
     enum CodingKeys: String, CodingKey {
         case voornaam = "voornaam"
         case achternaam = "achternaam"
-        case foto = "foto"
+        //case foto = "foto"
         case email = "email"
         case telefoonNummer = "telNr"
         //case gebruikerType = "type"
+        //case isFacebookUser = "
     }
 
     init() {
 
     }
 
-    init(voornaam: String, achternaam: String, email: String, foto: String) {
+    init(voornaam: String, achternaam: String, email: String) {
         self.voornaam = voornaam
         self.achternaam = achternaam
         self.email = email
-        self.foto = foto
+        //self.foto = foto
         self.winkelwagens = []
     }
 
