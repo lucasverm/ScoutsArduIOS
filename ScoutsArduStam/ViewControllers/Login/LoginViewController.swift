@@ -10,6 +10,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
+
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var facebookLogin: UIButton!
@@ -20,6 +21,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var ButtonRegistreer: UIButton!
     var dataController = DataController.shared
 
+    @IBOutlet var faTest: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         TextFieldEmail.delegate = self
@@ -28,7 +30,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.navigationItem.hidesBackButton = true
         ButtonRegistreer.layer.borderWidth = 1.0
         ButtonRegistreer.layer.cornerRadius = 5.0
-        ButtonRegistreer.layer.borderColor = UIColor.systemBlue.cgColor
+        ButtonRegistreer.layer.borderColor = UIColor(red:0.37, green:0.04, blue:0.17, alpha:1.0).cgColor
         ButtonLogin.layer.cornerRadius = 5.0
         facebookLogin.layer.cornerRadius = 5.0
         TextFieldWachtwoord.layer.borderWidth = 1.0
@@ -45,6 +47,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 break
             }
         }
+        
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -75,13 +78,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     self.errorMessage.text = "U canncelde het aanmelden met facebook..."
                 }
 
-            case .failed(let error):
+            case .failed:
                 DispatchQueue.main.async {
                     self.errorMessage.backgroundColor = UIColor.systemRed
                     self.errorMessage.text = "Er liep iets fout tijdens het aanmelden met facebook!"
                 }
 
-            case .success(let grantedPermissions, let declinedPermissions, let accessToken):
+            case .success:
                 GraphRequest(graphPath: "me", parameters: ["fields": "id,name , first_name, last_name , email"]).start(completionHandler: { (connection, result, error) in
 
                     guard let Info = result as? [String: Any] else { return }

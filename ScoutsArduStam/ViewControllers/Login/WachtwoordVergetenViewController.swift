@@ -10,13 +10,14 @@ import UIKit
 
 class WachtwoordVergetenViewController: UIViewController {
 
+
+    @IBOutlet var verzenden: UIButton!
     @IBOutlet var textField: UITextField!
     @IBOutlet var error: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad();
         error.isHidden = true;
-        
-
+        verzenden.layer.cornerRadius = 5.0
         // Do any additional setup after loading the view.
     }
     

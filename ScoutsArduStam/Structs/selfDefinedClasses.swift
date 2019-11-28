@@ -105,7 +105,7 @@ class Winkelwagen: Codable {
 class Gebruiker: Codable {
     var voornaam: String = ""
     var achternaam: String = ""
-   //var foto: String = ""
+    //var foto: String = ""
     var email: String = ""
     var telefoonNummer: String = ""
     //var isFacebookUser: Boolean = false
@@ -142,3 +142,6 @@ enum GebruikerType {
     case stam
     case admin
 }
+
+
+

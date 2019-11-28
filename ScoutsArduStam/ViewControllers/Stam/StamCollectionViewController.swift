@@ -9,6 +9,7 @@
 import UIKit
 import FacebookCore
 import FacebookLogin
+import FontAwesome_swift
 
 private let reuseIdentifier = "Cell"
 
@@ -17,9 +18,9 @@ class StamCollectionViewController: UICollectionViewController {
     var dataController = DataController.shared
     var gebruiker = DataController.shared.gebruiker
     var array = [
-        MenuItem(label: "enen drinken?!", afbeelding: "cheers.jpg", type: MenuEnum.enenDrinken),
-        MenuItem(label: "Portefeuille", afbeelding: "money.jpg", type: MenuEnum.portefeuille),
-        MenuItem(label: "History", afbeelding: "history.jpg", type: MenuEnum.history)
+        MenuItem(label: "Enen drinken?!", afbeelding: "fa-beer", type: MenuEnum.enenDrinken),
+        MenuItem(label: "Portefeuille", afbeelding: "fa-wallet", type: MenuEnum.portefeuille),
+        MenuItem(label: "History", afbeelding: "fa-history", type: MenuEnum.history)
     ]
 
 
@@ -82,7 +83,17 @@ class StamCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MenuItem", for: indexPath) as! MenuCollectionViewCell
         let menuItem = array[indexPath.row]
         cell.menuItemLabel.text = menuItem.label
-        cell.menuItemImage.image = UIImage(named: menuItem.afbeelding)
+        
+        //cell.menuItemImage.image = UIImage(named: menuItem.afbeelding)
+        
+        cell.menuItemImage.image = UIImage.fontAwesomeIcon(
+            name: FontAwesome(rawValue: menuItem.afbeelding)!,
+            style: .solid,
+            textColor: .init(hue: 0.9417, saturation: 0.76, brightness: 0.33, alpha: 1.0),
+            size: CGSize(width: 5000, height: 5000)
+            //backgroundColor: .white
+        )
+            
         return cell
     }
 
