@@ -10,7 +10,7 @@ import UIKit
 import FacebookCore
 import FacebookLogin
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet var facebookLogin: UIButton!
     @IBOutlet var errorMessage: UILabel!
@@ -22,12 +22,19 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        TextFieldEmail.delegate = self
+        TextFieldWachtwoord.delegate = self
         errorMessage.isHidden = true
         self.navigationItem.hidesBackButton = true
         ButtonRegistreer.layer.borderWidth = 1.0
         ButtonRegistreer.layer.cornerRadius = 5.0
         ButtonRegistreer.layer.borderColor = UIColor.systemBlue.cgColor
         ButtonLogin.layer.cornerRadius = 5.0
+        facebookLogin.layer.cornerRadius = 5.0
+        TextFieldWachtwoord.layer.borderWidth = 1.0
+        TextFieldWachtwoord.layer.borderColor = UIColor.systemGray.cgColor
+        TextFieldEmail.layer.borderWidth = 1.0
+        TextFieldEmail.layer.borderColor = UIColor.systemGray.cgColor
         // Obtain all constraints for the button:
         let layoutConstraintsArr = facebookLogin.constraints
         // Iterate over array and test constraints until we find the correct one:
@@ -38,6 +45,11 @@ class LoginViewController: UIViewController {
                 break
             }
         }
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
     }
 
     override func viewDidAppear(_ animated: Bool) {
