@@ -13,7 +13,7 @@ class OverichtTableViewCell: UITableViewCell {
     @IBOutlet weak var labelAantal: UILabel!
     @IBOutlet weak var labelNaam: UILabel!
     @IBOutlet weak var labelPrijs: UILabel!
-    var item: WinkelwagenItem!
+    var itemAantal: WinkelwagenItemAantal!
 
     override func awakeFromNib() {
         super.awakeFromNib()

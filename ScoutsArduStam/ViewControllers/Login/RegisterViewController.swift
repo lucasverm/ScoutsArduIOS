@@ -116,7 +116,7 @@ class RegisterViewController: UIViewController {
         errorMessage.backgroundColor = UIColor.systemOrange
         errorMessage.text = "Account creeëren..."
         errorMessage.isHidden = false
-        dataController.registerUser(email:TextFieldEmail.text!, password:TextFieldPassword.text!, voornaam: TextFieldVoornaam.text!, achternaam: TextFieldAchternaam.text!, passwordConfirmation: TextFieldPasswordConfirmation.text!, completion: {
+        dataController.registerUser(email:TextFieldEmail.text!, password:TextFieldPassword.text!, voornaam: TextFieldVoornaam.text!, achternaam: TextFieldAchternaam.text!, passwordConfirmation: TextFieldPasswordConfirmation.text!, telNr: TextFieldTelefoon.text!, completion: {
             (bool) in
             if bool {
                 self.errorMessage.backgroundColor = UIColor.systemGreen

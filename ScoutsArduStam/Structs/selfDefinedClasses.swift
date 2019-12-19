@@ -19,17 +19,18 @@ enum MenuEnum {
     case history
 }
 
-class WinkelwagenItem: Codable {
+class WinkelwagenItemAantal: Codable {
     var id: Int = 0
-    var naam: String!
-    var prijs: Float!
+    var item: WinkelwagenItem?
     var aantal: Int! = 0
-    var short: [String: String] { return ["id": String(self.id), "aantal": String(self.aantal)] }
+    var short: [String: Any] { return [
+        "item": self.item!.short,
+        "aantal": String(self.aantal)
+        ] }
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
-        case naam = "naam"
-        case prijs = "prijs"
+        case item = "item"
         case aantal = "aantal"
     }
 
@@ -37,21 +38,46 @@ class WinkelwagenItem: Codable {
 
     }
 
-    init(id: Int, naam: String, prijs: Float, aantal: Int) {
+    init(id: Int, aantal: Int, item: WinkelwagenItem) {
+        self.id = id
+        self.aantal = aantal
+        self.item = item
+    }
+}
+
+class WinkelwagenItem: Codable {
+    var id: Int = 0
+    var naam: String!
+    var prijs: Float!
+    var short: [String: String] { return ["id": String(self.id)] }
+    enum CodingKeys: String, CodingKey {
+        case id = "id"
+        case naam = "naam"
+        case prijs = "prijs"
+    }
+
+    init() {
+
+    }
+
+    init(id: Int, naam: String, prijs: Float) {
         self.naam = naam
         self.id = id
         self.prijs = prijs
-        self.aantal = aantal
-
     }
 }
 
 class Winkelwagen: Codable {
     var id: Int = 0
-    var items: [WinkelwagenItem] = []
+    var items: [WinkelwagenItemAantal] = []
     var betaald: Bool = false
     var datum: Date = Date()
     var gebruiker: Gebruiker?
+    var datumDag: Int = 0
+    var datumMaand: Int = 0
+    var datumJaar: Int = 0
+    var datumUur: Int = 0
+    var datumMinuten: Int = 0
     var short: [String: Any] {
         var items: [Any] = []
         for item in self.items {
@@ -60,7 +86,6 @@ class Winkelwagen: Codable {
         var uitvoer: [String: Any] = [:]
         uitvoer["items"] = items
         uitvoer["betaald"] = betaald
-        //uitvoer["datum"] = String(self.datum.timeIntervalSince1970)
         return uitvoer
     }
 
@@ -68,39 +93,41 @@ class Winkelwagen: Codable {
         case id = "id"
         case items = "items"
         case gebruiker = "gebruiker"
-        //case datum = "datum"
+        case datumDag = "datumDag"
+        case datumMaand = "datumMaand"
+        case datumJaar = "datumJaar"
+        case datumUur = "datumUur"
+        case datumMinuten = "datumMinuten"
     }
 
     func totaalPrijs() -> Float {
         var som: Float = 0
         for item in items {
-            som += Float(item.aantal) * item.prijs
+            som += Float(item.aantal) * item.item!.prijs
         }
         return (som * 1000).rounded() / 1000
     }
 
     func getFormattedDate() -> String {
-        let datumFormatter = DateFormatter()
-        datumFormatter.dateFormat = "dd/MM/yyyy"
-        return datumFormatter.string(from: datum)
+        return addAdditionalZero(getal: datumDag) + "/" + addAdditionalZero(getal: datumMaand) + "/" + addAdditionalZero(getal: datumJaar)
     }
 
     func getFormattedTime() -> String {
-        let datumFormatter = DateFormatter()
-        datumFormatter.dateFormat = "HH:mm"
-        return datumFormatter.string(from: datum)
+        return addAdditionalZero(getal: datumUur) + ":" + addAdditionalZero(getal: datumMinuten)
     }
-
-    func getFormattedTimeWithSeconds() -> String {
-        let datumFormatter = DateFormatter()
-        datumFormatter.dateFormat = "HH:mm:ss"
-        return datumFormatter.string(from: datum)
+    
+    func addAdditionalZero(getal:Int) -> String {
+        var uitvoer:String = String(getal)
+        if (uitvoer.count == 1){
+            uitvoer = "0" + uitvoer
+        }
+        return uitvoer
     }
-
 
     init() {
     }
 }
+
 
 class Gebruiker: Codable {
     var voornaam: String = ""

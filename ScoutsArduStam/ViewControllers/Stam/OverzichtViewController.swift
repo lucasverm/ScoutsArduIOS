@@ -17,8 +17,8 @@ class OverzichtViewController: UIViewController, UITableViewDataSource, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         var som: Float = 0
-        for item in winkelwagen.items {
-            som += (item.prijs * Float(item.aantal))
+        for itemAantal in winkelwagen.items {
+            som += (itemAantal.item!.prijs * Float(itemAantal.aantal))
         }
         let afgerond = (som * 1000).rounded() / 1000
         let totaal = "Totaal: € " + String(afgerond)
@@ -39,11 +39,11 @@ class OverzichtViewController: UIViewController, UITableViewDataSource, UITableV
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OverzichtItem", for: indexPath) as! OverichtTableViewCell
 
-        let item = winkelwagen.items[indexPath.row]
-        cell.item = item
-        cell.labelNaam.text = item.naam
-        cell.labelAantal.text = String(item.aantal)
-        let som = Float(item.aantal) * item.prijs
+        let itemAantal = winkelwagen.items[indexPath.row]
+        cell.itemAantal = itemAantal
+        cell.labelNaam.text = itemAantal.item!.naam
+    cell.labelAantal.text = String(itemAantal.aantal)
+        let som = Float(itemAantal.aantal) * itemAantal.item!.prijs
         let afgerond = (som * 1000).rounded() / 1000
         cell.labelPrijs.text = "€ " + String(afgerond)
         return cell
@@ -53,6 +53,7 @@ class OverzichtViewController: UIViewController, UITableViewDataSource, UITableV
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let vc = segue.destination as! Sante_ViewController
         vc.navigationItem.hidesBackButton = true
+        self.winkelwagen.gebruiker = self.dataController.gebruiker
         vc.winkelwagen = self.winkelwagen
         vc.bekijken = false
         self.dataController.gebruiker.winkelwagens.append(self.winkelwagen)

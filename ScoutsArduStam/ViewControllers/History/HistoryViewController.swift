@@ -102,7 +102,7 @@ class HistoryViewController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Winkelwagen", for: indexPath) as! HistoryTableViewCell
         let item = textViewData[indexPath.row]
-        cell.textLabel?.text = item.getFormattedDate() + " (" + item.getFormattedTime() + ")"
+        cell.textLabel?.text = (item.gebruiker?.voornaam.capitalized)! + " " + (item.gebruiker?.achternaam.capitalized)! + " " + item.getFormattedDate() + " (" + item.getFormattedTime() + ")"
         cell.detailTextLabel?.text = "€" + String(item.totaalPrijs())
         cell.item = item
         return cell

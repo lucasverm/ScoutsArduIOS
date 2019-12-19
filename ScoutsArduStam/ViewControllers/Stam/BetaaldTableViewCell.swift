@@ -12,7 +12,7 @@ class BetaaldTableViewCell: UITableViewCell {
 
     @IBOutlet var labelNaam: UILabel!
     @IBOutlet var labelAantal: UILabel!
-    var item: WinkelwagenItem!
+    var itemAantal: WinkelwagenItemAantal!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

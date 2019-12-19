@@ -13,22 +13,22 @@ class WinkelwagenItemTableViewCell: UITableViewCell {
     @IBOutlet var labelTotaal: UILabel!
     @IBOutlet var labelAantal: UILabel!
     @IBOutlet var stepperAantal: UIStepper!
-    var item: WinkelwagenItem! {
+    var itemAantal: WinkelwagenItemAantal! {
         didSet {
-            stepperAantal.value = Double(item.aantal)
+            stepperAantal.value = Double(itemAantal.aantal)
         }
     }
 
     func updateCell() {
-        labelAantal.text = String(Int(item.aantal))
-        let som = Float(item.aantal) * item.prijs
+        labelAantal.text = String(Int(itemAantal.aantal))
+        let som = Float(itemAantal.aantal) * itemAantal.item!.prijs
         let afgerond = (som * 1000).rounded() / 1000
         labelTotaal.text = "€ " + String(afgerond)
 
     }
 
     @IBAction func StepperAction(_ sender: UIStepper) {
-        item.aantal = Int(sender.value)
+        itemAantal.aantal = Int(sender.value)
         updateCell()
     }
     override func awakeFromNib() {

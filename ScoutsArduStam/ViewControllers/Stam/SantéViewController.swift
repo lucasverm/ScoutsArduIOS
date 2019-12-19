@@ -28,10 +28,9 @@ class Sante_ViewController: UIViewController, UITableViewDataSource, UITableView
         if(!bekijken) {
             dataController.gebruiker.winkelwagens.append(self.winkelwagen)
             self.dataController.postWinkelwagen(winkelwagen: self.winkelwagen) { (res) in
-                if (res) {
+                self.winkelwagen = res
                     self.updateUi()
                     self.indicatorVisible(varia: !true)
-                }
             }
         }else {
             self.updateUi()
@@ -62,9 +61,9 @@ class Sante_ViewController: UIViewController, UITableViewDataSource, UITableView
     func updateUi() {
         DispatchQueue.main.async {
             self.labelPrijs.text = "Prijs: €" + String(self.winkelwagen.totaalPrijs())
-            self.labelNaam.text = "Naam: " + self.dataController.gebruiker.voornaam.capitalized + " " + self.dataController.gebruiker!.achternaam.capitalized
+            self.labelNaam.text = "Naam: " + self.winkelwagen.gebruiker!.voornaam.capitalized + " " + self.winkelwagen.gebruiker!.achternaam.capitalized
             self.labelDatum.text = "Datum: " + self.winkelwagen.getFormattedDate()
-            self.labelTijdstip.text = "Tijdstip: " + self.winkelwagen.getFormattedTimeWithSeconds()
+            self.labelTijdstip.text = "Tijdstip: " + self.winkelwagen.getFormattedTime()
         }
     }
 
@@ -77,11 +76,11 @@ class Sante_ViewController: UIViewController, UITableViewDataSource, UITableView
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "OverzichtItem", for: indexPath) as! BetaaldTableViewCell
-        let item = winkelwagen.items[indexPath.row]
+        let itemAantal = winkelwagen.items[indexPath.row]
         cell.backgroundColor = self.view.backgroundColor
-        cell.item = item
-        cell.labelAantal.text = String(item.aantal)
-        cell.labelNaam.text = item.naam
+        cell.itemAantal = itemAantal
+        cell.labelAantal.text = String(itemAantal.aantal)
+        cell.labelNaam.text = itemAantal.item!.naam
         return cell
     }
 }
