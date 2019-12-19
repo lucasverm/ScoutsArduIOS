@@ -21,7 +21,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var ButtonRegistreer: UIButton!
     var dataController = DataController.shared
 
-    @IBOutlet var faTest: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         TextFieldEmail.delegate = self
@@ -57,7 +56,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidAppear(_ animated: Bool) {
         if dataController.userIsAuthenticated {
+            DispatchQueue.main.async {
             self.dismiss(animated: true, completion: nil)
+            }
         }
     }
 
@@ -102,7 +103,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                                 DispatchQueue.main.async {
                                     self.errorMessage.backgroundColor = UIColor.systemGreen
                                     self.errorMessage.text = "Aangemeld!"
+                                    DispatchQueue.main.async {
                                     self.dismiss(animated: true, completion: nil)
+                                    }
                                 }
                             } else {
                                 DispatchQueue.main.async {
@@ -163,7 +166,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if bool {
                 self.errorMessage.backgroundColor = UIColor.systemGreen
                 self.errorMessage.text = "Aangemeld!"
+                DispatchQueue.main.async {
                 self.dismiss(animated: true, completion: nil)
+                }
                 self.dataController.getLoggedInUser { (gbr) in
                     self.dataController.gebruiker = gbr
                 }

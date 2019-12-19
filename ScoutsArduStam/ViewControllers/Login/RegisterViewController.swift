@@ -23,7 +23,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ButtonRegistreer.layer.cornerRadius = 5.0
-        errorMessage.isHidden = true
+        errorMessageIsHidden(bool: true)
         for item in textVelden{
             item.layer.borderWidth = 1.0
             item.layer.borderColor = UIColor.systemGray.cgColor
@@ -32,7 +32,9 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func ButtonBack(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.dismiss(animated: true, completion: nil)
+        }
     }
     
     func validateEmail(email: String) -> Bool {
@@ -43,15 +45,15 @@ class RegisterViewController: UIViewController {
 
 
     @IBAction func Registreer(_ sender: Any) {
-        TextFieldEmail.layer.borderWidth = 0
+       /*TextFieldEmail.layer.borderWidth = 0
         TextFieldPassword.layer.borderWidth = 0
         TextFieldPasswordConfirmation.layer.borderWidth = 0
         TextFieldVoornaam.layer.borderWidth = 0
         TextFieldAchternaam.layer.borderWidth = 0
         TextFieldTelefoon.layer.borderWidth = 0
         
-        errorMessage.isHidden = true
-        let doChecks = true
+        errorMessageIsHidden(bool: true)
+        let doChecks = false
 
         if doChecks {
             
@@ -111,21 +113,43 @@ class RegisterViewController: UIViewController {
             }
             
 
-        }
-
-        errorMessage.backgroundColor = UIColor.systemOrange
-        errorMessage.text = "Account creeëren..."
-        errorMessage.isHidden = false
+        }*/
+        errorMessageColor(color: UIColor.systemOrange)
+        errorMessageText(text: "Account creeëren...")
+        errorMessageIsHidden(bool: false)
         dataController.registerUser(email:TextFieldEmail.text!, password:TextFieldPassword.text!, voornaam: TextFieldVoornaam.text!, achternaam: TextFieldAchternaam.text!, passwordConfirmation: TextFieldPasswordConfirmation.text!, telNr: TextFieldTelefoon.text!, completion: {
             (bool) in
             if bool {
-                self.errorMessage.backgroundColor = UIColor.systemGreen
-                self.errorMessage.text = "Aangemaakt!"
-                self.dismiss(animated: true, completion: nil)
+                self.errorMessageText(text: "Welkom!")
+                self.errorMessageColor(color: UIColor.green)
+                DispatchQueue.main.async {
+                    self.dismiss(animated: true, completion: nil)
+                }
             } else {
-                self.errorMessage.backgroundColor = UIColor.systemRed
-                self.errorMessage.text = "Er liep iets fout!"
+                self.errorMessageColor(color: UIColor.systemRed)
+                self.errorMessageText(text: "Er liep iets fout!")
             }
         })
+         
     }
+    
+    func errorMessageText(text: String) {
+        DispatchQueue.main.async {
+            self.errorMessage.text = text
+        }
+    }
+    
+    func errorMessageColor(color: UIColor) {
+        DispatchQueue.main.async {
+            self.errorMessage.backgroundColor = color
+        }
+    }
+    
+    func errorMessageIsHidden(bool: Bool) {
+        DispatchQueue.main.async {
+            self.errorMessage.isHidden = bool
+        }
+    }
+    
+    
 }
