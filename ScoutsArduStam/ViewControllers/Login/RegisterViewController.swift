@@ -45,7 +45,7 @@ class RegisterViewController: UIViewController {
 
 
     @IBAction func Registreer(_ sender: Any) {
-       /*TextFieldEmail.layer.borderWidth = 0
+        TextFieldEmail.layer.borderWidth = 0
         TextFieldPassword.layer.borderWidth = 0
         TextFieldPasswordConfirmation.layer.borderWidth = 0
         TextFieldVoornaam.layer.borderWidth = 0
@@ -53,7 +53,7 @@ class RegisterViewController: UIViewController {
         TextFieldTelefoon.layer.borderWidth = 0
         
         errorMessageIsHidden(bool: true)
-        let doChecks = false
+        let doChecks = true
 
         if doChecks {
             
@@ -113,7 +113,7 @@ class RegisterViewController: UIViewController {
             }
             
 
-        }*/
+        }
         errorMessageColor(color: UIColor.systemOrange)
         errorMessageText(text: "Account creeëren...")
         errorMessageIsHidden(bool: false)
