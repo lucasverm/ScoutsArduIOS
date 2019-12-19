@@ -133,7 +133,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         TextFieldEmail.layer.borderWidth = 0
         TextFieldWachtwoord.layer.borderWidth = 0
         errorMessage.isHidden = true
-        let doChecks = false
+        let doChecks = true
 
         if doChecks {
 
@@ -161,7 +161,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         errorMessage.backgroundColor = UIColor.systemOrange
         errorMessage.text = "Verbinden met server..."
         errorMessage.isHidden = false
-        dataController.loginUser(email: "user@example.com", password: "string", completion: {
+        dataController.loginUser(email: TextFieldEmail.text!, password: TextFieldWachtwoord.text!, completion: {
             (bool) in
             if bool {
                 self.errorMessage.backgroundColor = UIColor.systemGreen
