@@ -22,4 +22,4 @@ In de applicatie kan u:
 In de app kan u zich registreren, zo kan u de app gebruiken.
 
 ## License
-Deze applicatie werd uitgegeven onder een GNU GPLv3 [Licentie](https://github.com/lucasverm/ScoutsArduAndroid/blob/master/LICENSE.md "LICENSE").
+Deze applicatie werd uitgegeven onder een GNU GPLv3 [Licentie](https://github.com/lucasverm/ScoutsArduIOS/blob/master/LICENSE.md "LICENSE").
