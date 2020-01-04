@@ -15,7 +15,7 @@ import FacebookLogin
 class DataController {
     var bearerToken: String = ""
     var userIsAuthenticated = false
-    var baseUrl = "https://scoutsarduapinew.azurewebsites.net"
+    var baseUrl = "https://scoutsardunewk.azurewebsites.net/"
     var gebruiker: Gebruiker!
     static let shared = DataController()
     var myHistoryOpgehaald: Bool = false
