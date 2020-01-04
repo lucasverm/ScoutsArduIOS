@@ -11,6 +11,7 @@ Deze applciatie werd gemaakt om iets te kunnen kopen in de stam van scouts Ardu 
 In de applicatie kan u: 
 - Aanmelden
 - Registreren
+- Aanmelden met facebook
 - Een drankje consumeren
 - Uw historie bekijken
 - De historie van anderen bekijken
